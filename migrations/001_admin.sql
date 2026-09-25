@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS site_settings (
+  key TEXT PRIMARY KEY,
+  value_en TEXT NOT NULL DEFAULT '',
+  value_ar TEXT NOT NULL DEFAULT '',
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+)

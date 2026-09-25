@@ -1,0 +1,19 @@
+/* HP Laptops catalog */
+.laptop-hero{padding-top:120px;background:linear-gradient(135deg,#f6fbff 0%,#fff 58%,#eaf7fd 100%)}
+.laptop-filters{margin:28px 0 34px;display:flex;gap:10px;flex-wrap:wrap}
+.laptop-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.laptop-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:18px;box-shadow:0 14px 35px rgba(18,47,75,.07);display:flex;flex-direction:column;min-height:100%;transition:.2s}
+.laptop-card:hover{transform:translateY(-4px);box-shadow:0 20px 45px rgba(18,47,75,.12)}
+.laptop-image{height:220px;border-radius:17px;background:#f5f8fb;display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:16px}
+.laptop-image.dark{background:#071b34}
+.laptop-image img{width:100%;height:100%;object-fit:contain;padding:12px}
+.laptop-card h3{font-size:22px;margin:9px 0 8px;color:var(--navy)}
+.laptop-card p{font-size:13px;line-height:1.75;color:var(--muted);margin:0 0 14px}
+.laptop-card .hp-size{align-self:flex-start;background:#e9f7fc;color:#0879c9;border-radius:999px;padding:6px 10px;font-size:10px;font-weight:900;letter-spacing:.5px}
+.specs{display:flex;gap:7px;flex-wrap:wrap;margin-top:auto;padding-top:8px}
+.specs span,.specs b{font-size:10px;padding:7px 9px;border:1px solid var(--line);border-radius:9px;color:var(--ink);background:#fbfdff}
+.specs b{color:#0879c9}
+.laptop-card .hp-pdf{display:inline-flex;margin-top:15px;text-decoration:none;font-size:12px;font-weight:800;color:#0879c9}
+.laptop-card.hp-hidden{display:none}
+@media(max-width:1000px){.laptop-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:650px){.laptop-grid{grid-template-columns:1fr}.laptop-image{height:200px}.laptop-hero{padding-top:90px}}

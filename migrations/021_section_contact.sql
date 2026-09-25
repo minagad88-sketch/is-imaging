@@ -1,0 +1,1 @@
+INSERT INTO cms_sections(section_key,label_en,label_ar,visible,sort_order) SELECT 'contact','Contact','تواصل معنا',true,120 WHERE NOT EXISTS (SELECT 1 FROM cms_sections WHERE section_key='contact')

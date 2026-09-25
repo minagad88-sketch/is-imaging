@@ -1,0 +1,5 @@
+# Hatchable project manifest. This file marks the folder as a
+# Hatchable project and declares the services it uses.
+# Reference: https://hatchable.com/docs/developers/config
+name = "IS Imaging Solutions Website"
+description = "Modern bilingual Arabic/English corporate website for IS Imaging Solutions, an HP authorized printing solutions company in Egypt."

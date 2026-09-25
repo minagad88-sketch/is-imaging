@@ -1,0 +1,1 @@
+INSERT INTO cms_sections(section_key,label_en,label_ar,visible,sort_order) SELECT 'cta','Call to Action','دعوة لاتخاذ إجراء',true,125 WHERE NOT EXISTS (SELECT 1 FROM cms_sections WHERE section_key='cta')

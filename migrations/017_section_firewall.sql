@@ -1,0 +1,1 @@
+INSERT INTO cms_sections(section_key,label_en,label_ar,visible,sort_order) SELECT 'firewall','Firewall & Cybersecurity','جدران الحماية والأمن السيبراني',true,80 WHERE NOT EXISTS (SELECT 1 FROM cms_sections WHERE section_key='firewall')

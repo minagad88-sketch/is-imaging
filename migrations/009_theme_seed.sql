@@ -1,0 +1,1 @@
+INSERT INTO cms_theme(id) SELECT 1 WHERE NOT EXISTS (SELECT 1 FROM cms_theme WHERE id=1)
