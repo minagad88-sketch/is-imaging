@@ -84,6 +84,18 @@ async function start() {
   await mount('/api/admin/supplies', './api/admin/supplies.js', { admin: true });
   await mount('/api/admin/upload', './api/admin/upload.js', { admin: true, upload: true });
 
+  // --- Gate the admin PAGE itself, not just the admin API -----------------
+  // Without this, loading /admin/ served the page with no prompt, and the
+  // page's own JavaScript then called /api/admin/* in the background. Those
+  // background (fetch) calls were getting rejected with 401 silently — the
+  // page just rendered empty tables, with nothing visibly wrong on screen.
+  // By gating /admin/* itself, the browser's native username/password
+  // prompt appears the moment the page is opened (same prompt you saw when
+  // testing /api/admin/products directly). Once entered, the browser
+  // remembers those credentials for the rest of the site's /admin and
+  // /api/admin/* calls automatically, so every admin page works normally.
+  app.use('/admin', requireAdmin, express.static(path.join(__dirname, 'public', 'admin')));
+
   // Static site (public/index.html, public/plotters/index.html, etc.)
   app.use(express.static(path.join(__dirname, 'public')));
 
